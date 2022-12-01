@@ -1,6 +1,8 @@
 package functions
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func Calc(var_1 string, var_2 string, calc string) (rest int) {
 
