@@ -1,5 +1,13 @@
-# README
+# Hi i'm Tomas Medeot
 
-This is an experimental template for vanilla HTML/JS/CSS.
+>Thanks for visiting my GitHub; Here is a few proyects in process  
+>For any question here is my [Email]('tomimedeot@gmail.com')
 
-The webpack rules may need to be adjusted to correctly embed all assets. Babel may also need to be setup correctly.
+## My First Desktop App on Golang
+
+>This App is a test for the basic functions in Fyne module
+
+## How to start
+
+>go get fyne.io/fyne/v2  
+>go mod tidy

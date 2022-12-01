@@ -1,26 +1,28 @@
 package main
 
 import (
-  _ "embed"
-  "github.com/wailsapp/wails"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/widget"
 )
 
-//go:embed frontend/build/main.js
-var js string
-
-//go:embed frontend/build/main.css
-var css string
-
 func main() {
+	App := app.New()
 
-  app := wails.CreateApp(&wails.AppConfig{
-    Width:  1024,
-    Height: 768,
-    Title:  "First-Desktop-Go",
-    JS:     js,
-    CSS:    css,
-    Colour: "#131313",
-  })
-  app.Bind(&Counter{})
-  app.Run()
+	Window := App.NewWindow("First Desktop")
+
+	text := widget.NewLabel("")
+	inp := widget.NewEntry()
+	inp.SetPlaceHolder("ingrese un texto")
+	Button := widget.NewButton("Enviar", func() {
+		text.SetText(inp.Text)
+	})
+
+	content := container.NewVBox(inp, Button, text)
+
+	Window.SetContent(content)
+	Window.Resize(fyne.Size{Width: 1000.0, Height: 1000.0})
+
+	Window.ShowAndRun()
 }
