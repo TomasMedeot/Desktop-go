@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"strconv"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -12,7 +12,6 @@ import (
 )
 
 func main() {
-	fmt.Println(functions.Calc(1, 2, "sum"))
 	App := app.New()
 	content := container.NewVBox()
 	Window := App.NewWindow("First Desktop")
@@ -25,7 +24,7 @@ func main() {
 	inp2.SetPlaceHolder("ingrese un texto")
 
 	Button := widget.NewButton("Enviar", func() {
-		text.SetText(inp1.Text)
+		text.SetText(strconv.Itoa(functions.Calc(inp1.Text, inp2.Text, "sum")))
 	})
 
 	selec := widget.NewSelect([]string{"sum", "res"}, func(s string) {
