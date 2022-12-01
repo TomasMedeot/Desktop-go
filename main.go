@@ -8,7 +8,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
 
-	functions "First_Desktop/elements"
+	functions "First_Desktop/functions"
 )
 
 func main() {

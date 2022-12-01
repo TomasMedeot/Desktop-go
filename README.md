@@ -3,7 +3,7 @@
 >Thanks for visiting my GitHub; Here is a few proyects in process  
 >For any question here is my [Email]('tomimedeot@gmail.com')
 
-## My First Desktop App on Golang
+## My first desktop app on Golang
 
 >This App is a test for the basic functions in Fyne module
 
@@ -11,3 +11,8 @@
 
 >go get fyne.io/fyne/v2  
 >go mod tidy
+
+## Functions developed
+
+>Calculator  
+>
