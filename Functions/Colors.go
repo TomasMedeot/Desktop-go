@@ -1,18 +1,26 @@
 package functions
 
 import (
-	"log"
+	"image/color"
 
 	"fyne.io/fyne"
+	"fyne.io/fyne/canvas"
 	"fyne.io/fyne/container"
 	"fyne.io/fyne/widget"
 )
 
 func Color(window fyne.Window) {
-	text := widget.NewLabel("")
-	radio := widget.NewRadioGroup([]string{"Green", "Blue", "Red"}, func(value string) {
-		log.Println("Radio set to", value)
+	text := canvas.NewText("", color.Black)
+	inp := widget.NewEntry()
+	green := widget.NewCheck("Green", func(value bool) {
 	})
-	content := container.NewVBox(text, radio)
+	red := widget.NewCheck("Red", func(value bool) {
+	})
+	blue := widget.NewCheck("Blue", func(value bool) {
+	})
+	button := widget.NewButton("Colorear", func() {
+		text.Text = inp.Text
+	})
+	content := container.NewVBox(inp, green, red, blue, button, text)
 	window.SetContent(content)
 }
