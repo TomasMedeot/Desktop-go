@@ -13,11 +13,14 @@ func main() {
 	App := app.New()
 	Window := App.NewWindow("First Desktop")
 
-	Button := widget.NewButton("Calculator", func() {
-		functions.Test(Window)
+	calc_button := widget.NewButton("Calculator", func() {
+		functions.Calculator(Window)
+	})
+	color_button := widget.NewButton("Color", func() {
+		functions.Color(Window)
 	})
 
-	content := container.NewVBox(Button)
+	content := container.NewVBox(calc_button, color_button)
 	Window.SetContent(content)
 	Window.Resize(fyne.Size{Width: 500.0, Height: 200.0})
 	Window.CenterOnScreen()
