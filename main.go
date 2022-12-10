@@ -11,7 +11,7 @@ import (
 
 func main() {
 	App := app.New()
-	Window := App.NewWindow("First Desktop")
+	Window := App.NewWindow("First Desktop v0.1")
 
 	calc_button := widget.NewButton("Calculator", func() {
 		functions.Calculator(Window)
