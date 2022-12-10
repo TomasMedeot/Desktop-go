@@ -15,4 +15,4 @@
 ## Functions developed
 
 >Calculator  
->
+>Color text
