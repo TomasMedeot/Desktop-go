@@ -37,7 +37,7 @@ func Calculator(window fyne.Window) {
 	text := widget.NewLabel("")
 	inp1 := widget.NewEntry()
 	inp2 := widget.NewEntry()
-	selec := widget.NewSelect([]string{"sum", "res"}, func(s string) {
+	selec := widget.NewSelect([]string{"sum", "res", "div", "mul"}, func(s string) {
 	})
 	button := widget.NewButton("Enviar", func() {
 		switch selec.SelectedIndex() {
@@ -45,6 +45,10 @@ func Calculator(window fyne.Window) {
 			text.SetText(strconv.Itoa(calculate(inp1.Text, inp2.Text, "sum")))
 		case 1:
 			text.SetText(strconv.Itoa(calculate(inp1.Text, inp2.Text, "res")))
+		case 2:
+			text.SetText(strconv.Itoa(calculate(inp1.Text, inp2.Text, "div")))
+		case 3:
+			text.SetText(strconv.Itoa(calculate(inp1.Text, inp2.Text, "mul")))
 		}
 	})
 	content := container.NewVBox(inp1, inp2, selec, button, text)
